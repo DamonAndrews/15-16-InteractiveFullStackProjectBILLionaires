@@ -21,23 +21,44 @@ Developer.init(
       type: DataTypes.TEXT,
       allowNull: true,
     },
+    email: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      unique: true,
+      validate: {
+        isEmail: true
+      }
+    },
+    password: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [8],
+      }
+    },
     work_date: {
       type: DataTypes.DATE,
       allowNull: false,
     },
     hours_worked: {
       type: DataTypes.INTEGER,
+      allowNull: false,
+    },
+    job_tier: {
+      type: DataTypes.ENUM(['1', '2', '3']),
+        allowNull: false,
     },
     bill_rate: {
         type: DataTypes.INTEGER,
+        allowNull: false,
       },
   },
   {
     sequelize,
     freezeTableName: true,
     underscored: true,
-    modelName: 'user',
+    modelName: 'developer',
   }
 );
 
-module.exports = User;
+module.exports = Developer;
