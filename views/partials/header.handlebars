@@ -1,13 +1,18 @@
+{{!--  body of site partial, work in progress --}}
 <body>
     <div class="flex-row justify-space-around">
         <header class="display-flex justify-space=between align-left">
             <h1>
                 <div class="form-group">
+                    <button class="btn btn-primary" type="home" align="float-left">BILLionares</button>
+                    <input class="search" type="text" align="float-right"
                     <button class="btn btn-primary" type="home">BILLionares</button>
                 </div>
             </h1>
         </header>
         <main class="container container-fluid mt-5">
+            {{!-- escape to js for sidenave bar --}}
+            {{{sidenav}}}
             {{{ body }}}
         </main>
         <footer class="center">
