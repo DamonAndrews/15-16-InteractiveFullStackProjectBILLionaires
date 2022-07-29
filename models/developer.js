@@ -36,10 +36,14 @@ Developer.init(
         len: [8],
       }
     },
-    work_date: {
-      type: DataTypes.DATE,
+    level: {
+      type: DataTypes.ENUM(['Senior', 'Mid-Level', 'Junior']),
       allowNull: false,
     },
+    // work_date: {
+    //   type: DataTypes.DATE,
+    //   allowNull: false,
+    // },
     // hours_worked: {
     //   type: DataTypes.INTEGER,
     //   allowNull: false,
