@@ -4,7 +4,12 @@ const PDFDocument = require('pdfkit');
 function createInvoice(invoice, path) {
 	let doc = new PDFDocument({ margin: 50 });
 
-	generateHeader(doc); {
+	generateHeader(doc);
+	generateCustomerInformation(doc, invoice);
+	generateInvoiceTable(doc, invoice);
+	generateFooter(doc); 
+
+    function generateHeader(doc) {
         doc.image('', 50, 45, { width: 50 })  //filler - adding a logo
 		.fillColor('#444444')
 		.fontSize(20)
@@ -14,9 +19,8 @@ function createInvoice(invoice, path) {
 		.text('', 200, 80, { align: 'right' }) //address lines for OUR company
 		.moveDown();
     }
-	generateCustomerInformation(doc, invoice);
-	generateInvoiceTable(doc, invoice);
-	generateFooter(doc); {
+
+    function generateFooter(doc) {
         doc.fontSize(
             20,
         ).text(
