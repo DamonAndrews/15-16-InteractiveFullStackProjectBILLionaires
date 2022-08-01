@@ -10,7 +10,7 @@ function createInvoice(invoice, path) {
 	generateFooter(doc); 
 
     doc.end();
-	doc.pipe(fs.createWriteStream(invoice.pdf));
+	doc.pipe(fs.createWriteStream(public/js/invoice.pdf));
 }
 function generateHeader(doc) {
     doc.image('billionaire-logo.jpg', 50, 45, { width: 50 })
@@ -75,6 +75,14 @@ function generateHr(doc, y) {
         .lineTo(550, y)
         .stroke();
       }
+
+function formatDate(date) {
+    const day = date.getDate();
+    const month = date.getMonth() + 1;
+    const year = date.getFullYear();
+      
+    return year + "/" + month + "/" + day;
+}
 
 module.exports = {
     createInvoice
