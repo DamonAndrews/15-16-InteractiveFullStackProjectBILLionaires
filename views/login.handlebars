@@ -1,5 +1,6 @@
-{{!-- user login form --}}
+{{!-- user login form--}}
 <h2>Existing User Login</h2>
+
 <form class="form login-form">
     <div class="form-group">
         {{!-- {{#if email}} --}}
@@ -12,13 +13,16 @@
         <label for="password-login">Password:</label>
         <input class="form-input" type="password" id="password-login"/>
         {{!-- {{/if}} --}}
+
     </div>
     <div class="form-group">
         <button class="btn btn-primary" type="submit">Login</button>
     </div>
+
 </form>
 
 {{!-- new user sign up form --}}
+
 <h3>Sign Up</h3>
 <form class="form create-user-form">
     <div class="form-group">
@@ -35,6 +39,7 @@
 </form>
 
 <script src="/js/login.js"></script>
+
 
 
 {{!-- const loginFormHandler = async (event) => {
@@ -64,3 +69,4 @@ alert('Failed to log in');
 document
 .querySelector('.login-form')
 .addEventListener('submit', loginFormHandler); --}}
+
