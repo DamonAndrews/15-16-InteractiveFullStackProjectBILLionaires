@@ -36,26 +36,22 @@ Developer.init(
         len: [8],
       }
     },
-    level: {
-      type: DataTypes.ENUM(['Senior', 'Mid-Level', 'Junior']),
+    work_date: {
+      type: DataTypes.DATE,
       allowNull: false,
     },
-    // work_date: {
-    //   type: DataTypes.DATE,
-    //   allowNull: false,
-    // },
-    // hours_worked: {
-    //   type: DataTypes.INTEGER,
-    //   allowNull: false,
-    // },
-    // job_tier: {
-    //   type: DataTypes.ENUM(['1', '2', '3']),
-    //     allowNull: false,
-    // },
-    // bill_rate: {
-    //     type: DataTypes.INTEGER,
-    //     allowNull: false,
-    //   },
+    hours_worked: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
+    job_tier: {
+      type: DataTypes.ENUM(['1', '2', '3']),
+        allowNull: false,
+    },
+    bill_rate: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+      },
   },
   {
     sequelize,
