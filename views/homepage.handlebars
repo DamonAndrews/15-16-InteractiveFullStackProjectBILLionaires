@@ -1,1 +1,43 @@
-{{!-- signed in user main page --}}
+{{!--  body of site partial, work in progress --}}
+<header class="display-flex justify-space=between align-left">
+    <h1>
+        <div class="form-group">
+            <button class="btn btn-primary" type="home" align="float-left">BILLionare</button>
+            </div>
+        </h1>
+        {{#if logged-in}}
+        <nav>
+            <button class="btn" id="logout">Logout</button>
+        </nav>
+        {{/if}}
+</header>
+<div>
+    <div class="flex-row justify-space-around">
+        <main class="container container-fluid mt-5">
+            {{!-- escape to js for sidenave bar --}}
+            {{sidenav}}
+        </main>
+    </div>
+</div>
+
+{{!-- SIGNED-IN USER HOMEPAGE --}}
+<div>
+{{!-- buttons will navigate user to respective forms --}}
+<div>
+    <button class="btn" id="newClient">Add New Client</button>
+    <button class="btn" id="editClient">Edit Client Info</button>
+    <button class="btn" id="newInovice">New Invoice</button>
+</div>
+{{!-- forms to be pulled up whenuser makes a choice --}}
+<form class="form" id="newClient" onsubmit="return false">
+    <a href="/create_client"></a>
+</form>
+<form class="form" id="editClient" onsubmit="return false">
+    <b href="/edit_client"></b>
+</form>
+<form class="form" id="newInvoice" onsubmit="return false">
+    <c href="/create_invoice"></c>
+</form>
+</div>
+{{!-- logout script only if user logged in --}}
+<script src="/js/logout.js"></script>
