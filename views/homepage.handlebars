@@ -1,1 +1,23 @@
-{{!-- signed in user main page --}}
+{{!-- SIGNED-IN USER HOMEPAGE --}}
+<main>
+{{!-- buttons will navigate user to respective forms --}}
+<div>
+    <button class="btn" id="newClient">Add New Client</button>
+    <button class="btn" id="editClient">Edit Client Info</button>
+    <button class="btn" id="newInovice">New Invoice</button>
+</div>
+{{!-- logout script only if user logged in --}}
+{{#if logged_in}}
+<script src="/js/logout.js"></script>
+{{/if}}
+{{!-- hidden forms to be pulled up wqhenuser makes a choice --}}
+<section class="form" id="newClient">
+    <a href="/create_client"></a>
+</section>
+<scetion class="form" id="editClient">
+    <b href="/edit_client"></b>
+</scetion>
+<section class="form" id="newInvoice">
+    <c href="/create_invoice"></c>
+</section>
+</main>
