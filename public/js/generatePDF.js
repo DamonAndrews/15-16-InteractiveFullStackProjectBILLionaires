@@ -1,4 +1,24 @@
-// not sure where to put this yet but i know it's all necessary for the pdf convert to work.
+const fs = require('fs');
 const PDFDocument = require('pdfkit');
-const doc = new PDFDocument;
-// not sure where to put this yet but i know it's all necessary for the pdf convert to work
+
+function createInvoice(invoice, path) {
+	let doc = new PDFDocument({ margin: 50 });
+
+	generateHeader(doc); {
+        doc.image('', 50, 45, { width: 50 })  //filler - adding a logo
+		.fillColor('#444444')
+		.fontSize(20)
+		.text('BILLionaires', 110, 57)
+		.fontSize(10)
+		.text('', 200, 65, { align: 'right' })
+		.text('', 200, 80, { align: 'right' }) //address lines for OUR company
+		.moveDown();
+    }
+	generateCustomerInformation(doc, invoice);
+	generateInvoiceTable(doc, invoice);
+	generateFooter(doc);
+    }
+
+	doc.end();
+	doc.pipe(fs.createWriteStream(path));
+}
