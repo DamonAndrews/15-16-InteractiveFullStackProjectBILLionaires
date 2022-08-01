@@ -98,18 +98,21 @@
     <button class="btn" id="editClient">Edit Client Info</button>
     <button class="btn" id="newInovice">New Invoice</button>
 </div>
-{{!-- logout script only if user logged in --}}
-{{!-- hidden forms to be pulled up wqhenuser makes a choice --}}
-<section class="form" id="newClient">
+{{!-- forms to be pulled up whenuser makes a choice --}}
+<form class="form" id="newClient" onsubmit="return false">
     <a href="/create_client"></a>
-</section>
-<section class="form" id="editClient">
+</form>
+<form class="form" id="editClient" onsubmit="return false">
     <b href="/edit_client"></b>
-</section>
-<section class="form" id="newInvoice">
+</form>
+<form class="form" id="newInvoice" onsubmit="return false">
     <c href="/create_invoice"></c>
-</section>
+</form>
 </div>
+<<<<<<< HEAD
+{{!-- logout script only if user logged in --}}
+<script src="/js/logout.js"></script>
+=======
 <script src="/js/logout.js"></script>
 >>>>>>> feef4213078ec6e5b21f93d6e553d93ede4e914f
 =======
@@ -123,3 +126,4 @@
 <script src="/js/logout.js"></script>
 
 >>>>>>> 11753b18896dba5e464578e9d6dbe7f854f6f35d
+>>>>>>> 776600d9976f67d3a8cdcb6f2c872664762c5c3d

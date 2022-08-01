@@ -1,24 +1,19 @@
-<<<<<<< HEAD
+{{!--  body of site partial, work in progress --}}
 <body>
     <div class="flex-row justify-space-around">
-=======
-{{!--  body of site partial, work in progress --}}
         <header class="display-flex justify-space=between align-left">
             <h1>
                 <div class="form-group">
-                    <button class="btn btn-primary" type="home" align="float-left">BILLionare</button>
+                    <button class="btn btn-primary" type="home" align="float-left">BILLionares</button>
+                    <input class="search" type="text" align="float-right"
+                    <button class="btn btn-primary" type="home">BILLionares</button>
                 </div>
             </h1>
-            {{!-- {{#if logged-in}} --}}
-            <nav>
-                <button class="btn" id="logout">Logout</button>
-            </nav>
         </header>
-
->>>>>>> 776600d9976f67d3a8cdcb6f2c872664762c5c3d
-
         <main class="container container-fluid mt-5">
-        
+            {{!-- escape to js for sidenave bar --}}
+            {{{sidenav}}}
+            {{{ body }}}
         </main>
         <footer class="center">
             Online Invoicing by The Billy Club®
