@@ -1,15 +1,23 @@
-{{!-- signed in user main page --}}
-{{!-- form for user to sign up using email and user set password --}}
+{{!-- SIGNED-IN USER HOMEPAGE --}}
+<main>
+{{!-- buttons will navigate user to respective forms --}}
 <div>
-    <form action="signup.html" method="post" id="signup">
-	<h1>Sign-Up</h1>
-		<label for="email">Email:</label>
-		<input type="text" id="email" name="email" placeholder="Enter your email address"/>
-	</div>
-		<div class="field">
-		<label for="email">Password:</label>
-		<input type="text" id="email" name="email" placeholder="Set a Password"/>
-	</div>
-	<button type="submit">Sign-Up</button>
-</form>
+    <button class="btn" id="newClient">Add New Client</button>
+    <button class="btn" id="editClient">Edit Client Info</button>
+    <button class="btn" id="newInovice">New Invoice</button>
 </div>
+{{!-- logout script only if user logged in --}}
+{{#if logged_in}}
+<script src="/js/logout.js"></script>
+{{/if}}
+{{!-- hidden forms to be pulled up wqhenuser makes a choice --}}
+<section class="form" id="newClient">
+    <a href="/create_client"></a>
+</section>
+<scetion class="form" id="editClient">
+    <b href="/edit_client"></b>
+</scetion>
+<section class="form" id="newInvoice">
+    <c href="/create_invoice"></c>
+</section>
+</main>
