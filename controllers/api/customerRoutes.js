@@ -26,7 +26,7 @@ router.get('/customer/:id', async (req, res) => {
 });
 
 // POST a new customer using async/await
-router.post('/', async (req, res) => {
+router.post('/create', async (req, res) => {
   try { 
     const customerData = await Customer.create({
     company_name: req.body.customer_company_name,

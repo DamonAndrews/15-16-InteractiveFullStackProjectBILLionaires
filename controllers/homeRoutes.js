@@ -9,7 +9,6 @@ router.get('/', withAuth, async (req, res) => {
   try {
     const developerData = await Developer.findAll({
       attributes: { exclude: ['password'] },
-      order: [['name', 'ASC']],
     });
 
     const developer = developerData.map((project) => project.get({ plain: true }));
@@ -32,6 +31,16 @@ router.get('/login', (req, res) => {
     return;
   }
 
+  res.render('login');
+});
+//change name
+
+router.get('/create', (req, res) => {
+  //if they hit login url while logged in this takes them to the homepage
+  if (req.session.logged_in) {
+    res.redirect('/');
+    return;
+  }
   res.render('login');
 });
 
