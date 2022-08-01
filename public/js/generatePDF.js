@@ -16,8 +16,17 @@ function createInvoice(invoice, path) {
     }
 	generateCustomerInformation(doc, invoice);
 	generateInvoiceTable(doc, invoice);
-	generateFooter(doc);
+	generateFooter(doc); {
+        doc.fontSize(
+            20,
+        ).text(
+            'Please feel free to reach out with any questions or concerns.  Thank you for your business.',
+            50,
+            780,
+            { align: 'center', width: 500 },
+        );
     }
+    
 
 	doc.end();
 	doc.pipe(fs.createWriteStream(path));
