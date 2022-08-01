@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {{!-- SIGNED-IN USER HOMEPAGE --}}
 <main>
 {{!-- buttons will navigate user to respective forms --}}
@@ -30,3 +31,48 @@
 
 
 
+=======
+{{!--  body of site partial, work in progress --}}
+<header class="display-flex justify-space=between align-left">
+    <h1>
+        <div class="form-group">
+            <button class="btn btn-primary" type="home" align="float-left">BILLionare</button>
+            </div>
+        </h1>
+        {{#if logged-in}}
+        <nav>
+            <button class="btn" id="logout">Logout</button>
+        </nav>
+        {{/if}}
+</header>
+<div>
+    <div class="flex-row justify-space-around">
+        <main class="container container-fluid mt-5">
+            {{!-- escape to js for sidenave bar --}}
+            {{sidenav}}
+        </main>
+    </div>
+</div>
+
+{{!-- SIGNED-IN USER HOMEPAGE --}}
+<div>
+{{!-- buttons will navigate user to respective forms --}}
+<div>
+    <button class="btn" id="newClient">Add New Client</button>
+    <button class="btn" id="editClient">Edit Client Info</button>
+    <button class="btn" id="newInovice">New Invoice</button>
+</div>
+{{!-- logout script only if user logged in --}}
+{{!-- hidden forms to be pulled up wqhenuser makes a choice --}}
+<section class="form" id="newClient">
+    <a href="/create_client"></a>
+</section>
+<section class="form" id="editClient">
+    <b href="/edit_client"></b>
+</section>
+<section class="form" id="newInvoice">
+    <c href="/create_invoice"></c>
+</section>
+</div>
+<script src="/js/logout.js"></script>
+>>>>>>> feef4213078ec6e5b21f93d6e553d93ede4e914f
