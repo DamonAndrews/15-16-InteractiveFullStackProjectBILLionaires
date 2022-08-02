@@ -1,11 +1,15 @@
 const signUpFormHandler = async (event) => {
     event.preventDefault();
-    const username = document.querySelector('#create-username').value.trim();
+    console.log(hey)
+    const first = document.querySelector('#first-name').value.trim();
+    const last = document.querySelector('#last-name').value.trim();
+    const email = document.querySelector('#create-username').value.trim();
     const password = document.querySelector('#create-password').value.trim();
-    if (username && password) {
+    const level = document.querySelector('#user-level').value.trim();
+    if (first && last && email && password && level) {
         const response = await fetch('/api/developerRoutes/create', {
             method: 'POST',
-            body: JSON.stringify({ username, password }),
+            body: JSON.stringify({ first, last, email, password, level }),
             headers: { 'Content-Type': 'application/json' },
         });
         if (response.ok) {
@@ -17,7 +21,7 @@ const signUpFormHandler = async (event) => {
     }
 };
 document
-    .querySelector('.sign-up-form')
+    .querySelector('#sign-up')
     .addEventListener('submit', signUpFormHandler);
 
 

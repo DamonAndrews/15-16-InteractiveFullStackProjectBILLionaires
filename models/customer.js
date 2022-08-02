@@ -31,15 +31,27 @@ Customer.init(
       type: DataTypes.TEXT,
       allowNull: true,
     },
-    job_type_requested: {
-        type: DataTypes.INTEGER,
-      allowNull: false,
-    },
     email: {
         type: DataTypes.STRING,
         allowNull: false,
         unique: true,
-      }
+      },
+      work_description: {
+        type: DataTypes.ENUM(['Front End', 'Back end', 'Maintenance', 'Full Stack']),
+        allowNull: false,
+      },
+    location: {
+      type: DataTypes.ENUM(['Remote', 'On Site']),
+      allowNull: false,
+    },
+    rate_of_pay: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
+    job_tier: {
+      type: DataTypes.ENUM(['1', '2', '3']),
+      allowNull: false,
+    }
   },
   {
     sequelize,

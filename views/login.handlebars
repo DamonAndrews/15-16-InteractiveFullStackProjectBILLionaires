@@ -19,16 +19,29 @@
 <h3>Sign Up</h3>
 <form class="form create-user-form">
     <div class="form-group">
-        <label for="create-username">Select Username:</label>
+        <label for="first-name">First Name:</label>
+        <input class="form-input" type="text" id="first-name"/>
+    </div>
+    <div class="form-group">
+        <label for="last-name">Last Name:</label>
+        <input class="form-input" type="text" id="last-name"/>
+    </div>
+    <div class="form-group">
+        <label for="create-username">Enter Email:</label>
         <input class="form-input" type="text" id="user-create"/>
     </div>
     <div class="form-group">
         <label for="create-password">Select Password:</label>
         <input class="form-input" type="text" id="password-create"/>
     </div>
+      <div class="form-group">
+        <label for="user-level">Senior, Mid-Level or Junior?</label>
+        <input class="form-input" type="text" id="user-level"/>
+    </div>
     <div class="form-group">
-        <button class="btn btn-primary" type="submit">Sign-Up</button>
+        <button class="btn btn-primary" id="sign-up" type="submit">Sign-Up</button>
     </div>
 </form>
 <script src="/js/login.js"></script>
+{{!-- <script src="/public/js/sign_up.js"></script> --}}
 

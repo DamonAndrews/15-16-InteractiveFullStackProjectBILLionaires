@@ -37,10 +37,7 @@ router.post('/customer', async (req, res) => {
     first_name: req.body.first_name,
     last_name: req.body.last_name,
     email: req.body.email,
-    // work_description: req.body.customer_work_description,
-    // location: req.body.customer_location,
-    // rate_of_pay: req.body.customer_rate_of_pay,
-    // job_tier: req.body.customer_job_tier,
+    // possibly going to rewrite the model and seed data and split up all of the categories individually
   });
   // if the customer is successfully created, the new response will be returned as json
   res.status(200).json(customerData)
