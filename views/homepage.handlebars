@@ -29,7 +29,8 @@
 
 {{!-- buttons will navigate user to respective forms --}}
 <div>
-    <button class="btn" id="newClient">Add New Customer</button>
+    {{!-- <button class="btn" id="newClient">Add New Customer</button> --}}
+    <button class="btn btn-primary" type= "submit" id="addCustomer">Add New Customer</button>
     <button class="btn" id="editClient">Edit Customer Info</button>
     <button class="btn" id="newInovice">New Invoice</button>
 </div>
@@ -38,8 +39,8 @@
 <script src="/js/logout.js"></script>
 {{/if}}
 {{!-- hidden forms to be pulled up wqhenuser makes a choice --}}
-<section class="form" id="newClient">
-    <a href="/create_client"></a>
+<section class="form" id="addCustomer">
+    <a href="/public/views/add_customer"></a>
 </section>
 
 <scetion class="form" id="editClient">
@@ -49,5 +50,9 @@
     <c href="/create_invoice"></c>
 </section>
 </main>
+
+{{!-- <script src="/js/newCustmer.js"></script> --}}
+
+<script type="text" src="/views/add_customer.handlebars"></script>
 
 
