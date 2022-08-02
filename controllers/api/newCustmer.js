@@ -1,6 +1,6 @@
-const { response } = require("express");
+// const express = require("express");
 
-const customerFormHandler = async (event) =>{
+const newcustomerFormHandler = async (event) =>{
     event.preventDefault();
 
     const newCompany = document.querySelector('#company_name').value.trim();
@@ -11,7 +11,7 @@ const customerFormHandler = async (event) =>{
     const newJobType =document.querySelector('#job_type_requested').value.trim();
     const newEmail =document.querySelector('#email').value.trim();
     
-    const reponse = await fetch('/api/customerRoutes/create', {
+    const response = await fetch('/api/add_customer', {
         method: 'POST',
         body: JSON.stringify({company_name:newCompany,company_address: newAddress, company_phone_number:newNumber, first_name:newFname, last_name: newLname, job_type_requested: newJobType, email: newEmail  }),
         headers: {'Content-Type': 'application/json'},
@@ -22,6 +22,6 @@ const customerFormHandler = async (event) =>{
         alert('FAILED TO CREATE!');
     }
 }
-
-document.querySelector('.newCustomerForm');
-document.addEventListener('submit', customerFormHandler);
+document
+.querySelector('.newCustomerForm')
+.addEventListener('addCustomer', newcustomerFormHandler);
