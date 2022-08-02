@@ -1,4 +1,5 @@
 const { Customer } = require('../models')
+const { generatePDF } = require("../public/js/generatePDF");
 
 const customerData = [
     {

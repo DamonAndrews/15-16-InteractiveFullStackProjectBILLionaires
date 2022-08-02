@@ -9,8 +9,8 @@ function createInvoice(invoice, path) {
 	generateInvoiceTable(doc, invoice);
 	generateFooter(doc); 
 
+	doc.pipe(fs.createWriteStream(public/js/invoice1.pdf));
     doc.end();
-	doc.pipe(fs.createWriteStream(public/js/invoice.pdf));
 }
 function generateHeader(doc) {
     doc.image('billionaire-logo.jpg', 50, 45, { width: 50 })
@@ -25,10 +25,7 @@ function generateHeader(doc) {
 }
 
 function generateCustomerInformation(doc, customerData) {
-    doc
-        .fillColor("#444444")
-        .fontSize(20)
-        .text("Invoice", 50, 160);
+    doc.fillColor("#444444").fontSize(20).text("Invoice", 50, 160);
           
     generateHr(doc, 185);
           
@@ -46,7 +43,7 @@ function generateCustomerInformation(doc, customerData) {
         .text(customerData.email, 150, custInfoBase + 30)
           
         .font("Helvetica-Bold")
-        .text(customerData.company_name, 300, custInfoBase)
+        .text(customerData.company_name, 300, custInfoBase) //change to user input
         .font("Helvetica")
         .text(customerData.company_address, 300, custInfoBase + 15)
         .text(customerData.company_phone_number, 300, custInfoBase + 30)
@@ -54,26 +51,20 @@ function generateCustomerInformation(doc, customerData) {
           
         generateHr(doc, 252);
      }
-    
+
+function generateInvoiceTable(doc, customerData) {
+    // let i;
+    const invoiceTableTop = 330;
+      
+    doc.font("Helvetica-Bold");
+    generateTableRow(doc, invoiceTableTop, "Item", "Cost", "Quantity", "Line Total");
+}
 
 function generateFooter(doc) {
-    doc.fontSize(
-       20,
-    ).text(
-        'Please feel free to reach out with any questions or concerns.  Thank you for your business.',
-        50,
-        780,
-        { align: 'center', width: 500 },
-        );
-    }
+    doc.fontSize(20,).text('Please feel free to reach out with any questions or concerns.  Thank you for your business.', 50, 780, { align: 'center', width: 500 } );}
 
 function generateHr(doc, y) {
-    doc
-        .strokeColor("#aaaaaa")
-        .lineWidth(1)
-        .moveTo(50, y)
-        .lineTo(550, y)
-        .stroke();
+    doc.strokeColor("#aaaaaa").lineWidth(1).moveTo(50, y).lineTo(550, y).stroke();
       }
 
 function formatDate(date) {
@@ -81,8 +72,17 @@ function formatDate(date) {
     const month = date.getMonth() + 1;
     const year = date.getFullYear();
       
-    return year + "/" + month + "/" + day;
+    return month + "/" + day + "/" + year;
 }
+
+function generateTableRow(doc, y, item, unitCost, quantity, lineTotal) {
+    doc
+      .fontSize(10)
+      .text(item, 50, y)
+      .text(unitCost, 280, y, { width: 90, align: "right" })
+      .text(quantity, 370, y, { width: 90, align: "right" })
+      .text(lineTotal, 0, y, { align: "right" });
+  }
 
 module.exports = {
     createInvoice
