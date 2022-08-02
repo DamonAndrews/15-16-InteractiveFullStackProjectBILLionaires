@@ -1,6 +1,8 @@
 // const express = require("express");
 
-const newcustomerFormHandler = async (event) =>{
+// const res = require("express/lib/response");
+
+const newCustomerFormHandler = async (event) =>{
     event.preventDefault();
 
     const newCompany = document.querySelector('#company_name').value.trim();
@@ -8,20 +10,18 @@ const newcustomerFormHandler = async (event) =>{
     const newNumber =document.querySelector('#company_phone_number').value.trim();
     const newFname =document.querySelector('#first_name').value.trim();
     const newLname =document.querySelector('#last_name').value.trim();
-    const newJobType =document.querySelector('#job_type_requested').value.trim();
-    const newEmail =document.querySelector('#email').value.trim();
+    const newEmail =document.querySelector('#company_email').value.trim();
     
-    const response = await fetch('/api/add_customer', {
+    const response = await fetch('/api/customer', {
         method: 'POST',
-        body: JSON.stringify({company_name:newCompany,company_address: newAddress, company_phone_number:newNumber, first_name:newFname, last_name: newLname, job_type_requested: newJobType, email: newEmail  }),
+        body: JSON.stringify({"company_name":newCompany, "company_address": newAddress, "company_phone_number":newNumber, "first_name":newFname, "last_name": newLname, "email": newEmail  }),
         headers: {'Content-Type': 'application/json'},
     })
     if(response.ok){
         document.location.replace('/');
     } else {
+        console.log(response)
         alert('FAILED TO CREATE!');
     }
 }
-document
-.querySelector('.newCustomerForm')
-.addEventListener('addCustomer', newcustomerFormHandler);
+document.querySelector('#submitNewCustomer').addEventListener('click', newCustomerFormHandler);

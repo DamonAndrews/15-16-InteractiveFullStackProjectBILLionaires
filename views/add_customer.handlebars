@@ -1,20 +1,24 @@
 
-<form action="/action_page.php" class="newCustomerForm">
-  <label for="cars"></label>
-  <select id="cars" name="cars">
-    <input value="company_name"></input>
-    <input value="company_address"></input>
-    <input value="company_phone_number"></input>
-    <input value="first_name"></input>
-    <input value="last_name"></input>
-    <input value="email"></input>
-  </select>
-  <input type="submit">
+<form action="/action_page.php" id="test" class="newCustomerForm">
+    <label for="company_name">Company Name:</label>
+    <input id="company_name"/>
+    <label for="company_address">Address:</label>
+    <input id="company_address"/>
+    <label for="company_phone_number">Phone Number:</label>
+    <input id="company_phone_number"/>
+    <label for="first_name">First Name:</label>
+    <input id="first_name"/>
+    <label for="last_name">Last Name:</label>
+    <input id="last_name"/>
+    <label for="company_email">Email Address:</label>
+    <input id="company_email"/>
+  
+  <input type="submit" id="submitNewCustomer">
 </form>
 
-    <div class="form-group">
+    {{!-- <div class="form-group">
         <button class="btn btn-primary" type="submit">Sign-Up</button>
-    </div>
+    </div> --}}
 
 
-<script type="text/javascript" src="/public/js/newCustmer.js"></script>
+<script src="/js/newCustomer.js"></script>
