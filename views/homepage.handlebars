@@ -8,9 +8,9 @@
             <button class="btn btn-primary" type="home" align="float-left">BILLionare</button>
             </div>
         </h1>
-        {{#if logged-in}}
+        {{#if logged_in}}
         <nav>
-            <button class="btn" id="logout">Logout</button>
+            <button class="btn" align="float-left" id="logout">Logout</button>
         </nav>
         {{/if}}
 </header>
@@ -38,20 +38,20 @@
 {{#if logged_in}}
 <script src="/js/logout.js"></script>
 {{/if}}
-{{!-- hidden forms to be pulled up wqhenuser makes a choice --}}
-<section class="form" id="addCustomer">
-    <a href="/public/views/add_customer"></a>
-</section>
+{{!-- hidden forms to be pulled up when user makes a choice --}}
+{{!-- <section class="form" id="addCustomer">
+    <a href="/views/add_customer.handlebars"></a>
+</section> --}}
 
-<scetion class="form" id="editClient">
+{{!-- <scetion class="form" id="editClient">
     <b href="/edit_client"></b>
 </scetion>
 <section class="form" id="newInvoice">
     <c href="/create_invoice"></c>
 </section>
-</main>
+</main> --}}
 
-{{!-- <script src="/js/newCustmer.js"></script> --}}
+<script src="/js/test.js"></script>
 
 <script type="text" src="/views/add_customer.handlebars"></script>
 

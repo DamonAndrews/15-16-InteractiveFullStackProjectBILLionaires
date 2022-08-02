@@ -24,6 +24,15 @@ router.get('/', withAuth, async (req, res) => {
   }
 });
 
+router.get('/addcustomer', withAuth, async (req, res) => {
+  // if (req.session.logged_in) {
+  //   // res.redirect('/');
+  //   return;
+  // }
+
+  res.render('add_customer');
+});
+
 router.get('/login', (req, res) => {
   //if they hit login url while logged in this takes them to the homepage
   if (req.session.logged_in) {
