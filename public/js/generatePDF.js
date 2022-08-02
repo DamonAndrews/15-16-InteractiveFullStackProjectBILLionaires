@@ -1,5 +1,6 @@
+const PDFDocument = require("pdfkit");
 const fs = require('fs');
-const PDFDocument = require('pdfkit');
+
 
 function createInvoice(invoice, path) {
 	let doc = new PDFDocument({ margin: 50 });
@@ -9,20 +10,20 @@ function createInvoice(invoice, path) {
 	generateInvoiceTable(doc, invoice);
 	generateFooter(doc); 
 
-	doc.pipe(fs.createWriteStream(public/js/invoice1.pdf));
+	doc.pipe(fs.createWriteStream(path));
     doc.end();
 }
-function generateHeader(doc) {
-    doc.image('billionaire-logo.jpg', 50, 45, { width: 50 })
-	.fillColor('#444444')
-	.fontSize(20)
-	.text('BILLionaires', 110, 57)
-	.fontSize(10)
-    .text("Billionaires", 200, 50, { align: "right" })
-	.text('8450 NE Loop 410', 200, 65, { align: 'right' })
-	.text('San Antonio, TX, 78154', 200, 80, { align: 'right' })
-	.moveDown();
-}
+// function generateHeader(doc) {
+//     // doc.image('billionaire-logo.jpg', 50, 45, { width: 50 })
+// 	.fillColor('#444444')
+// 	.fontSize(20)
+// 	.text('BILLionaires', 110, 57)
+// 	.fontSize(10)
+//     .text("Billionaires", 200, 50, { align: "right" })
+// 	.text('8450 NE Loop 410', 200, 65, { align: 'right' })
+// 	.text('San Antonio, TX, 78154', 200, 80, { align: 'right' })
+// 	.moveDown();
+// }
 
 function generateCustomerInformation(doc, customerData) {
     doc.fillColor("#444444").fontSize(20).text("Invoice", 50, 160);
@@ -84,6 +85,5 @@ function generateTableRow(doc, y, item, unitCost, quantity, lineTotal) {
       .text(lineTotal, 0, y, { align: "right" });
   }
 
-module.exports = {
-    createInvoice
-};
+
+createInvoice()

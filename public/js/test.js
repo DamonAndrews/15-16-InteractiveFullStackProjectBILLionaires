@@ -14,4 +14,4 @@ const addCustomerForm = async (event) => {
 
   document.querySelector('#editClient').addEventListener('click', editCustomerForm);
 
-  document.querySelector('#newInvoice').addEventListener('click', generateInvoice);
+  // document.querySelector('#newInvoice').addEventListener('click', generateInvoice);

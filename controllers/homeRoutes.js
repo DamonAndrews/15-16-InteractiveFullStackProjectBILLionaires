@@ -27,7 +27,7 @@ router.get('/addcustomer', withAuth, async (req, res) => {
   res.render('add_customer');
 });
 
-router.get('/editcustomer', withAuth, async (req, res) => {
+router.get('/editclient', withAuth, async (req, res) => {
 
   res.render('edit_client');
 });

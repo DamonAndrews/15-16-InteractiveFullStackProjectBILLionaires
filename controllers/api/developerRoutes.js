@@ -1,18 +1,18 @@
-const router = require('express').Router();
+var express = require('express');
+var router = express.Router();
+const PDFDocument =  require('pdfkit')
 const { Developer } = require('../../models');
 
-
 //Update developer info
-router.post('/', async (req, res) => {
+router.post('/create', async (req, res) => {
   try { 
     const devData = await Developer.create({
-    first_name: req.body.developer_first_name,
-    last_name: req.body.developer_last_name,
-    email: req.body.developer_email,
-    password: req.body.developer_password,
-    level: req.body.developer_level,
-  });
-  // if the customer is successfully created, the new response will be returned as json
+      first_name: req.body.first,
+      last_name: req.body.last,
+      email: req.body.email,
+      password: req.body.password,
+      level: req.body.level,
+    });
   res.status(200).json(devData)
 } catch (err) {
   res.status(400).json(err);
@@ -65,5 +65,20 @@ router.post('/logout', (req, res) => {
     res.status(404).end();
   }
 });
+
+router.get('/invoice', (req, res) => {
+  const doc = new PDFDocument();
+  const filename = "invoice.pdf";
+  
+  res.setHeader('Content-Disposition', 'attachment; filename="invoice.pdf"')
+  res.setHeader('Content-Type', 'application/pdf');
+  const content = "test 12345";
+  doc.y = 300;
+  doc.text(content, 50, 50);
+  doc.pipe(res);
+  doc.end();
+})
+
+
 
 module.exports = router;

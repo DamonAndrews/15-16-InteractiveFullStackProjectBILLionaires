@@ -19,10 +19,6 @@ Customer.init(
         type: DataTypes.STRING,
       allowNull: false,
     },
-    company_phone_number: {
-        type: DataTypes.INTEGER,
-      allowNull: false,
-    },
     first_name: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -36,28 +32,52 @@ Customer.init(
         allowNull: false,
         unique: true,
       },
-      work_description: {
-        type: DataTypes.ENUM(['Front End', 'Back end', 'Maintenance', 'Full Stack']),
-        allowNull: false,
-      },
-    location: {
-      type: DataTypes.ENUM(['Remote', 'On Site']),
+    front_end: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
+    back_end: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
+    maintenance: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
+    full_stack: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
+    remote: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
+    on_site: {
+      type: DataTypes.INTEGER,
       allowNull: false,
     },
     rate_of_pay: {
       type: DataTypes.INTEGER,
       allowNull: false,
     },
-    job_tier: {
-      type: DataTypes.ENUM(['1', '2', '3']),
+    jt_1: {
+      type: DataTypes.INTEGER,
       allowNull: false,
-    }
+    },
+    jt_2: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
+    jt_3: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
   },
   {
     sequelize,
     freezeTableName: true,
     underscored: true,
-    modelName: 'customer',
+    modelName: 'Customer',
   }
 );
 
