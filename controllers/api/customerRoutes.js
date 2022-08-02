@@ -26,17 +26,19 @@ router.get('/customer/:id', async (req, res) => {
 });
 
 // POST a new customer using async/await
-router.post('/', async (req, res) => {
+router.post('/create', async (req, res) => {
   try { 
     const customerData = await Customer.create({
-    customer_company_name: req.body.customer_company_name,
-    customer_company_address: req.body.customer_company_address,
-    customer_company_phone_number: req.customer_company_phone_number,
-    customer_contact_first_name: req.body.customer_contact_first_name,
-    customer_contact_last_name: req.body.customer_contact_last_name,
-    customer_contact_phone_number: req.body.customer_contact_phone_number,
-    customer_contact_email: req.body.customer_contact_email,
-    customer_job_types_offered: req.body.customer_job_types_offered,
+    company_name: req.body.customer_company_name,
+    company_address: req.body.customer_company_address,
+    company_phone_number: req.customer_company_phone_number,
+    first_name: req.body.customer_first_name,
+    last_name: req.body.customer_last_name,
+    email: req.body.customer_email,
+    work_description: req.body.customer_work_description,
+    location: req.body.customer_location,
+    rate_of_pay: req.body.customer_rate_of_pay,
+    job_tier: req.body.customer_job_tier,
   });
   // if the customer is successfully created, the new response will be returned as json
   res.status(200).json(customerData)
@@ -49,14 +51,16 @@ router.post('/', async (req, res) => {
 router.post('/customer/:id:', async (req, res) => {
   try { 
     const customerData = await Customer.create({
-    customer_company_name: req.body.customer_company_name,
-    customer_company_address: req.body.customer_company_address,
-    customer_company_phone_number: req.customer_company_phone_number,
-    customer_contact_first_name: req.body.customer_contact_first_name,
-    customer_contact_last_name: req.body.customer_contact_last_name,
-    customer_contact_phone_number: req.body.customer_contact_phone_number,
-    customer_contact_email: req.body.customer_contact_email,
-    customer_job_types_offered: req.body.customer_job_types_offered,
+      company_name: req.body.customer_company_name,
+      company_address: req.body.customer_company_address,
+      company_phone_number: req.customer_company_phone_number,
+      first_name: req.body.customer_first_name,
+      last_name: req.body.customer_last_name,
+      email: req.body.customer_email,
+      work_description: req.body.customer_work_description,
+      location: req.body.customer_location,
+      rate_of_pay: req.body.customer_rate_of_pay,
+      job_tier: req.body.customer_job_tier,
   });
   // if the customer is successfully updated, the new response will be returned as json
   res.status(200).json(customerData)

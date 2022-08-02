@@ -1,23 +1,5 @@
 {{!-- user login form--}}
 <h2>Existing User Login</h2>
-<<<<<<< HEAD
-<<<<<<< HEAD
-<form class="form login-form" id="email-login">
-    <div class="form-group">
-        {{#if email}}
-        <label for="email-login">Email:</label>
-        <input class="form-input" type="text" id="email-login"/>
-        {{/if}}
-    </div>
-    <div class="form-group">
-        {{#if password}}
-        <label for="password-login">Password:</label>
-        <input class="form-input" type="password" id="password-login"/>
-        {{/if}}
-=======
-=======
-
->>>>>>> 11753b18896dba5e464578e9d6dbe7f854f6f35d
 <form class="form login-form">
     <div class="form-group">
         {{!-- {{#if email}} --}}
@@ -29,86 +11,24 @@
         {{!-- {{#if password}} --}}
         <label for="password-login">Password:</label>
         <input class="form-input" type="password" id="password-login"/>
+        <button class="btn btn-primary" type="submit">Log-In</button>
         {{!-- {{/if}} --}}
-<<<<<<< HEAD
->>>>>>> feef4213078ec6e5b21f93d6e553d93ede4e914f
-=======
-
->>>>>>> 11753b18896dba5e464578e9d6dbe7f854f6f35d
-    </div>
-    <div class="form-group">
-        <button class="btn btn-primary" type="submit">Login</button>
-    </div>
-<<<<<<< HEAD
-<<<<<<< HEAD
-</form> 
-
-{{!--new user sign up form --}}
-=======
+<form class="form login-form">
 </form>
-
 {{!-- new user sign up form --}}
->>>>>>> feef4213078ec6e5b21f93d6e553d93ede4e914f
-=======
-
-</form>
-
-{{!-- new user sign up form --}}
-
->>>>>>> 11753b18896dba5e464578e9d6dbe7f854f6f35d
 <h3>Sign Up</h3>
 <form class="form create-user-form">
     <div class="form-group">
-        <label for="create-password">Select Username:</label>
-        <input class="form-input" type="text" id="user-create" />
+        <label for="create-username">Select Username:</label>
+        <input class="form-input" type="text" id="user-create"/>
     </div>
     <div class="form-group">
         <label for="create-password">Select Password:</label>
-        <input class="form-input" type="text" id="password-create" />
+        <input class="form-input" type="text" id="password-create"/>
     </div>
     <div class="form-group">
         <button class="btn btn-primary" type="submit">Sign-Up</button>
     </div>
 </form>
-
 <script src="/js/login.js"></script>
 
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
-
->>>>>>> 11753b18896dba5e464578e9d6dbe7f854f6f35d
-{{!-- const loginFormHandler = async (event) => {
-// Stop the browser from submitting the form so we can do so with JavaScript
-event.preventDefault();
-
-// Gather the data from the form elements on the page
-const email = document.querySelector('#email-login').value.trim();
-const password = document.querySelector('#password-login').value.trim();
-
-if (email && password) {
-// Send the e-mail and password to the server
-const response = await fetch('/api/users/login', {
-method: 'POST',
-body: JSON.stringify({ email, password }),
-headers: { 'Content-Type': 'application/json' },
-});
-
-if (response.ok) {
-document.location.replace('/');
-} else {
-alert('Failed to log in');
-}
-}
-};
-
-document
-.querySelector('.login-form')
-.addEventListener('submit', loginFormHandler); --}}
-<<<<<<< HEAD
->>>>>>> feef4213078ec6e5b21f93d6e553d93ede4e914f
-=======
-
->>>>>>> 11753b18896dba5e464578e9d6dbe7f854f6f35d

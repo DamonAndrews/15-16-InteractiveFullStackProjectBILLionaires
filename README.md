@@ -7,13 +7,16 @@ BILLionaires
 Project Description:
 Billing system for contractors. 
 
-USER STORY/ACCEPTANCE CRITERIA::
+User Story:
 As the owner of a new company, I want an easy way to bill my clients.
 WHEN I log into the app,
 THEN I want to be presented with options to Create a new client, Update an existing client and Generate invoice for existing clients.
 WHEN I select Create new client, THEN I am prompted to enter client profile info to be stored in the database.
 WHEN I select Update existing client, then I am presented with fields to update for the client.
 WHEN I select Generate invioce, THEN I am presented with both pre-populated and input forms to generate a complete ticket.
+
+ACCEPTANCE CRITERIA:
+It's done when 
 
 ERD, Route Table, & Wireframe:
 
