@@ -6,10 +6,6 @@ const routes = require('./controllers');
 
 const sequelize = require('./config/connection');
 
-// TODO: Add a comment describing the functionality of this expression
-//sequelize the data stored in the session
-//this is going to help us configure where the session data is being stored
-//we are creating a model here
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const app = express();
@@ -17,9 +13,7 @@ const PORT = process.env.PORT || 3001;
 
 const hbs = exphbs.create();
 
-// TODO: Add a comment describing the functionality of this object
-//sets up sessions with cookies
-//stores our definition for our cookies and how it relates to the database
+
 const sess = {
   secret: 'Super secret secret',
   cookie: {},

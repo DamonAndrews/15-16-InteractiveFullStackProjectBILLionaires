@@ -15,8 +15,6 @@ router.get('/', withAuth, async (req, res) => {
 
     res.render('homepage', {
       developer,
-      
-      //on homepage while logged in youll be prompted to login or logout depending on your state
       logged_in: req.session.logged_in,
     });
   } catch (err) {
@@ -25,12 +23,18 @@ router.get('/', withAuth, async (req, res) => {
 });
 
 router.get('/addcustomer', withAuth, async (req, res) => {
-  // if (req.session.logged_in) {
-  //   // res.redirect('/');
-  //   return;
-  // }
 
   res.render('add_customer');
+});
+
+router.get('/editclient', withAuth, async (req, res) => {
+
+  res.render('edit_client');
+});
+
+router.get('/generateinvoice', withAuth, async (req, res) => {
+
+  res.render('generate_invoice');
 });
 
 router.get('/login', (req, res) => {

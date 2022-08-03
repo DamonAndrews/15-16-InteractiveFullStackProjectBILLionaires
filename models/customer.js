@@ -19,10 +19,6 @@ Customer.init(
         type: DataTypes.STRING,
       allowNull: false,
     },
-    company_phone_number: {
-        type: DataTypes.INTEGER,
-      allowNull: false,
-    },
     first_name: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -31,21 +27,57 @@ Customer.init(
       type: DataTypes.TEXT,
       allowNull: true,
     },
-    job_type_requested: {
-        type: DataTypes.INTEGER,
-      allowNull: false,
-    },
     email: {
         type: DataTypes.STRING,
         allowNull: false,
         unique: true,
-      }
+      },
+    front_end: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
+    back_end: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
+    maintenance: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
+    full_stack: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
+    remote: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
+    on_site: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
+    rate_of_pay: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
+    jt_1: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
+    jt_2: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
+    jt_3: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
   },
   {
     sequelize,
     freezeTableName: true,
     underscored: true,
-    modelName: 'customer',
+    modelName: 'Customer',
   }
 );
 
