@@ -4,21 +4,35 @@ Project 2 for Full Stack Web Dev Course
 Project Title:
 BILLionaires
 
-Project Description:
-Billing system for contractors. 
+Project Requirements
+You and your group will use everything you’ve learned over the past fourteen modules to create a real-world full-stack application that you’ll be able to showcase to potential employers. The user story and acceptance criteria will depend on the project that you create, but your project must fulfil the following requirements:
 
-User Story:
-As the owner of a new company, I want an easy way to bill my clients.
-WHEN I log into the app,
-THEN I want to be presented with options to Create a new client, Update an existing client and Generate invoice for existing clients.
-WHEN I select Create new client,
-THEN I am prompted to enter client profile info to be stored in the database.
-WHEN I select Update existing client, 
-THEN I am presented with fields to update for the client.
-WHEN I select Generate invioce, 
-THEN I am presented with both pre-populated and input forms to generate a complete ticket.
+Use Node.js and Express.js to create a RESTful API.
 
+Use Handlebars.js as the templating engine.
 
-This is an online invoicing applictaion so that developers can generate an invoice for a client listed in a stored database.
+Use MySQL and the Sequelize ORM for the database.
 
-This application utilizes the following technologies: Object-relational mapping, API routes, Handlebars, and a MVC system.
+Have both GET and POST routes for retrieving and adding new data.
+
+Be deployed using Heroku (with data).
+
+Use at least one new library, package, or technology that we haven’t discussed.
+
+Have a polished UI.
+
+Be responsive.
+
+Be interactive (i.e., accept and respond to user input).
+
+Have a folder structure that meets the MVC paradigm.
+
+Include authentication (express-session and cookies).
+
+Protect API keys and sensitive information with environment variables.
+
+Have a clean repository that meets quality coding standards (file structure, naming conventions, follows best practices for class/id naming conventions, indentation, quality comments, etc.).
+
+Have a quality README (with unique name, description, technologies used, screenshot, and link to deployed application).
+
+Finally, you must add your project to the portfolio that you created in Module 2.
