@@ -20,7 +20,10 @@ Use at least one new library, package, or technology that we haven’t discussed
 
 Have a polished UI.
 
-Be responsive.
+Be responsive.!
+
+[BILLionaires_screenshot](https://user-images.githubusercontent.com/107002411/190228845-f7c95d47-5a74-4723-882a-41dc4188ba57.jpg)
+
 
 Be interactive (i.e., accept and respond to user input).
 
