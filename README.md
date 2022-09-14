@@ -6,6 +6,9 @@ BILLionaires
 Project Requirements
 You and your group will use everything you’ve learned over the past fourteen modules to create a real-world full-stack application that you’ll be able to showcase to potential employers. The user story and acceptance criteria will depend on the project that you create, but your project must fulfil the following requirements:
 
+
+[BILLionaires_screenshot](https://user-images.githubusercontent.com/107002411/190228845-f7c95d47-5a74-4723-882a-41dc4188ba57.jpg)
+
 Use Node.js and Express.js to create a RESTful API.
 
 Use Handlebars.js as the templating engine.
@@ -21,8 +24,6 @@ Use at least one new library, package, or technology that we haven’t discussed
 Have a polished UI.
 
 Be responsive.!
-
-[BILLionaires_screenshot](https://user-images.githubusercontent.com/107002411/190228845-f7c95d47-5a74-4723-882a-41dc4188ba57.jpg)
 
 
 Be interactive (i.e., accept and respond to user input).
